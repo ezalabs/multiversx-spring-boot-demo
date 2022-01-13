@@ -1,0 +1,737 @@
+{
+	"info": {
+		"_postman_id": "ea69b780-06d4-4e06-a617-9f1f63fc14b2",
+		"name": "elrond-spring-boot-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "create wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/account/wallet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"account",
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/account/{address}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"account",
+								"{address}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/account/{address}/balance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"account",
+								"{address}",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get nonce",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/account/{address}/nonce",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"account",
+								"{address}",
+								"nonce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/account/{address}/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"account",
+								"{address}",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get storage keys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/account/{address}/keys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"account",
+								"{address}",
+								"keys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get storage value",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/account/{address}/key/657468",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"account",
+								"{address}",
+								"key",
+								"657468"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "query transaction status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/transaction/{transaction_hash}/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transaction",
+								"{transaction_hash}",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/transaction/{transaction_hash}?withResults=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transaction",
+								"{transaction_hash}"
+							],
+							"query": [
+								{
+									"key": "withResults",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "transaction",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/transaction/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transaction",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send multiple transactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "transactions",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/transaction/send-multiple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transaction",
+								"send-multiple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estimate transaction cost",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "/Users/carlo/Desktop/projects/blockchain/elrond/spring-boot-sdk/elrond-spring-boot-demo/postman/request/devnetAccount.pem"
+								},
+								{
+									"key": "transaction",
+									"type": "file",
+									"src": "/Users/carlo/Desktop/projects/blockchain/elrond/spring-boot-sdk/elrond-spring-boot-demo/postman/request/transaction.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/transaction/cost",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transaction",
+								"cost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "simulate transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "transaction",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/transaction/simulate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"transaction",
+								"simulate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "network",
+			"item": [
+				{
+					"name": "get network config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/network/config",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"network",
+								"config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get shard status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/network/status/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"network",
+								"status",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get node heartbeat status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/node/heartbeatstatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"node",
+								"heartbeatstatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "block",
+			"item": [
+				{
+					"name": "get hyperblock by nonce",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/hyperblock/by-nonce/2966234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"hyperblock",
+								"by-nonce",
+								"2966234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get hyperblock by hash",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/hyperblock/by-hash/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"hyperblock",
+								"by-hash",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get block by nonce from shard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/block/1/by-nonce/540000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"block",
+								"1",
+								"by-nonce",
+								"540000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get block by hash from shard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/block/1/by-hash/xxxx",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"block",
+								"1",
+								"by-hash",
+								"xxxx"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "smart-contract",
+			"item": [
+				{
+					"name": "call function",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "function",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/smart-contract/function",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"smart-contract",
+								"function"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "query",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/smart-contract/query",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"smart-contract",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query hex",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "query",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/smart-contract/query-hex",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"smart-contract",
+								"query-hex"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query string",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "query",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/smart-contract/query-string",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"smart-contract",
+								"query-string"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "query int",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "query",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/smart-contract/query-int",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"smart-contract",
+								"query-int"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

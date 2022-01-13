@@ -1,0 +1,9 @@
+server:
+  port: 8081
+
+spring:
+  elrond:
+    client:
+      gateway: devnet
+      readTimeoutMillis: 10000
+      writeTimeoutMillis: 10000
