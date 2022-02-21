@@ -1,0 +1,6 @@
+{
+  "type": string (freeze | unfreeze | wipe),
+  "tokenIdentifier": string,
+  "nonce": number,
+  "address": string
+}

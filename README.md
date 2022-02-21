@@ -22,6 +22,7 @@ The service exposes multiple endpoints using controllers, covering most of the E
 - BlockController
 - SmartContractController
 - TransactionController
+- ESDTController
 
 You can find a Postman collection in the ```postman``` folder to test all the endpoints.
 Also, you can find a test wallet and payload files for transactions / functions.

@@ -4,10 +4,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import software.crldev.elrondspringbootstarterreactive.domain.account.Address;
 import software.crldev.elrondspringbootstarterreactive.domain.common.Balance;
+import software.crldev.elrondspringbootstarterreactive.domain.smartcontract.ContractFunction;
+import software.crldev.elrondspringbootstarterreactive.domain.smartcontract.ContractQuery;
 import software.crldev.elrondspringbootstarterreactive.domain.smartcontract.FunctionArgs;
 import software.crldev.elrondspringbootstarterreactive.domain.smartcontract.FunctionName;
-import software.crldev.elrondspringbootstarterreactive.domain.smartcontract.ScFunction;
-import software.crldev.elrondspringbootstarterreactive.domain.smartcontract.ScQuery;
+import software.crldev.elrondspringbootstarterreactive.domain.transaction.GasLimit;
 import software.crldev.elrondspringbootstarterreactive.domain.wallet.Wallet;
 
 import java.util.Arrays;
@@ -21,24 +22,25 @@ public class FunctionDto {
     private String scAddress;
     private Double value;
     private String funcName;
+    private String gasLimit;
     private String[] args;
 
-    public ScQuery mapQuery(Wallet wallet) {
-        return ScQuery.builder()
+    public ContractQuery mapQuery(Wallet wallet) {
+        return ContractQuery.builder()
                 .callerAddress(Address.fromHex(wallet.getPublicKeyHex()))
-                .smartContractAddress(Address.fromBech32(this.scAddress))
-                .functionName(FunctionName.fromString(this.funcName))
-                .args(Arrays.asList(this.args).isEmpty() ? FunctionArgs.empty() : FunctionArgs.fromString(args))
-                .value(nonNull(this.value) ? Balance.fromEgld(this.value) : Balance.zero())
+                .smartContractAddress(Address.fromBech32(scAddress))
+                .functionName(FunctionName.fromString(funcName))
+                .args(Arrays.asList(args).isEmpty() ? FunctionArgs.empty() : FunctionArgs.fromString(args))
                 .build();
     }
 
-    public ScFunction mapFunction() {
-        return ScFunction.builder()
-                .smartContractAddress(Address.fromBech32(this.scAddress))
-                .functionName(FunctionName.fromString(this.funcName))
-                .args(Arrays.asList(this.args).isEmpty() ? FunctionArgs.empty() : FunctionArgs.fromString(args))
-                .value(nonNull(this.value) ? Balance.fromEgld(this.value) : Balance.zero())
+    public ContractFunction mapFunction() {
+        return ContractFunction.builder()
+                .smartContractAddress(Address.fromBech32(scAddress))
+                .functionName(FunctionName.fromString(funcName))
+                .args(Arrays.asList(args).isEmpty() ? FunctionArgs.empty() : FunctionArgs.fromString(args))
+                .value(nonNull(value) ? Balance.fromString(gasLimit) : Balance.zero())
+                .gasLimit(nonNull(gasLimit) ? GasLimit.fromString(gasLimit) : GasLimit.defaultSmartContractCall())
                 .build();
     }
 

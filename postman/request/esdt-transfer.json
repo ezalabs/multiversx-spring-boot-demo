@@ -1,0 +1,7 @@
+{
+  "receiverAddress": string,
+  "tokenIdentifier": string,
+  "amount": number,
+  "functionName": string | empty,
+  "functionArgs": string[] | empty[]
+}

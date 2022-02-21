@@ -1,0 +1,4 @@
+{
+  "targetAddress": string,
+  "tokenIdentifier": string
+}

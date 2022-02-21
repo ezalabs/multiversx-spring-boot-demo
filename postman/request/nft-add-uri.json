@@ -1,0 +1,5 @@
+{
+  "tokenIdentifier": string,
+  "nonce": number,
+  "uris": string[]
+}

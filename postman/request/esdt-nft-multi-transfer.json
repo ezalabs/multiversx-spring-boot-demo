@@ -1,0 +1,10 @@
+{
+  "receiverAddress": string,
+  "tokens": [
+    {
+      "tokenIdentifier": string,
+      "nonce": number,
+      "amount": number
+    }
+  ]
+}

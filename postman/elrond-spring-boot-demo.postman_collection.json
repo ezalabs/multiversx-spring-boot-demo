@@ -138,7 +138,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/account/{address}/key/657468",
+							"raw": "http://localhost:8081/account/{address}/key/{key}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -148,7 +148,7 @@
 								"account",
 								"{address}",
 								"key",
-								"657468"
+								"{key}"
 							]
 						}
 					},
@@ -300,12 +300,12 @@
 								{
 									"key": "pemFile",
 									"type": "file",
-									"src": "/Users/carlo/Desktop/projects/blockchain/elrond/spring-boot-sdk/elrond-spring-boot-demo/postman/request/devnetAccount.pem"
+									"src": []
 								},
 								{
 									"key": "transaction",
 									"type": "file",
-									"src": "/Users/carlo/Desktop/projects/blockchain/elrond/spring-boot-sdk/elrond-spring-boot-demo/postman/request/transaction.json"
+									"src": []
 								}
 							],
 							"options": {
@@ -400,7 +400,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/network/status/1",
+							"raw": "http://localhost:8081/network/status/{shard_number}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -409,7 +409,7 @@
 							"path": [
 								"network",
 								"status",
-								"1"
+								"{shard_number}"
 							]
 						}
 					},
@@ -446,7 +446,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/hyperblock/by-nonce/2966234",
+							"raw": "http://localhost:8081/hyperblock/by-nonce/{nonce}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -455,7 +455,7 @@
 							"path": [
 								"hyperblock",
 								"by-nonce",
-								"2966234"
+								"{nonce}"
 							]
 						}
 					},
@@ -467,7 +467,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/hyperblock/by-hash/1",
+							"raw": "http://localhost:8081/hyperblock/by-hash/{hash}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -476,7 +476,7 @@
 							"path": [
 								"hyperblock",
 								"by-hash",
-								"1"
+								"{hash}"
 							]
 						}
 					},
@@ -488,7 +488,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/block/1/by-nonce/540000",
+							"raw": "http://localhost:8081/block/1/by-nonce/{nonce}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -498,7 +498,7 @@
 								"block",
 								"1",
 								"by-nonce",
-								"540000"
+								"{nonce}"
 							]
 						}
 					},
@@ -510,7 +510,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/block/1/by-hash/xxxx",
+							"raw": "http://localhost:8081/block/{block_number}/by-hash/{hash}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -518,9 +518,9 @@
 							"port": "8081",
 							"path": [
 								"block",
-								"1",
+								"{block_number}",
 								"by-hash",
-								"xxxx"
+								"{hash}"
 							]
 						}
 					},
@@ -726,6 +726,1089 @@
 							"path": [
 								"smart-contract",
 								"query-int"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "esdt",
+			"item": [
+				{
+					"name": "esdt upgrade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "upgrade",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/upgrade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"upgrade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt issue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "issuance",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/issuance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"issuance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "transfer",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt transfer multi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "transfer",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/multi-transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"multi-transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt local op",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "localOp",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/local-op",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"local-op"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt global op",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "globalOp",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/global-op",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"global-op"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt transfer ownership",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "ownershipTransfer",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/transfer-ownership",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"transfer-ownership"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt assign role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/role-assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"role-assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft transfer create role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "transfer",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/nft/transfer-role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"nft",
+								"transfer-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "nft",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/nft/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"nft",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft local op",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "localOp",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/nft/local-op",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"nft",
+								"local-op"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft global op",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "globalOp",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/nft/global-op",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"nft",
+								"global-op"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft stop creation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/nft/stop-creation/{token_identifier}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"nft",
+								"stop-creation",
+								"{token_identifier}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft update attributes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "update",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/nft/update-attributes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"nft",
+								"update-attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft add uri",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "addUri",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/nft/add-uri",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"nft",
+								"add-uri"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft get data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/address/{address}/nfts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"address",
+								"{address}",
+								"nfts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft get for account",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/nft/data/{address}/{token_identifier}/{nonce}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"nft",
+								"data",
+								"{address}",
+								"{token_identifier}",
+								"{nonce}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nft get for role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/address/{address}/role/{role}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"address",
+								"{address}",
+								"role",
+								"{role}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt get for account",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/address/{address}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"address",
+								"{address}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt get roles for account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/esdt/address/{address}/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"address",
+								"{address}",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt get all tokens",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/tokens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt get all fungible tokens",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/tokens/fungible",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"tokens",
+								"fungible"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt get all non-fungible tokens",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/tokens/non-fungible",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"tokens",
+								"non-fungible"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt get all semi-fungible tokens",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/tokens/semi-fungible",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"tokens",
+								"semi-fungible"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt get esdt properties",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/properties/{token_identifier}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"properties",
+								"{token_identifier}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "esdt get esdt special roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pemFile",
+									"type": "file",
+									"src": "request/devnetAccount.pem"
+								},
+								{
+									"key": "roleAssignment",
+									"type": "file",
+									"src": "request/role-assignment.json"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/esdt/special-roles/{token_identifier}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"esdt",
+								"special-roles",
+								"{token_identifier}"
 							]
 						}
 					},

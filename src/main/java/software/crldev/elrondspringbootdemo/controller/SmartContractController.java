@@ -32,36 +32,36 @@ public class SmartContractController {
     }
 
     @PostMapping("/query")
-    Mono<ScQueryResult> query(@RequestPart Mono<FilePart> pemFile,
-                              @RequestPart FunctionDto query) {
+    Mono<ContractQueryResult> query(@RequestPart Mono<FilePart> pemFile,
+                                    @RequestPart FunctionDto query) {
         return pemFile
                 .flatMap(Wallet::fromPemFile)
-                .flatMap(wallet -> interactor.query(wallet, query.mapQuery(wallet)));
+                .flatMap(wallet -> interactor.query(query.mapQuery(wallet)));
 
     }
 
     @PostMapping("/query-hex")
-    Mono<ScQueryResultHex> queryHex(@RequestPart Mono<FilePart> pemFile,
-                                    @RequestPart FunctionDto query) {
-        return pemFile
-                .flatMap(Wallet::fromPemFile)
-                .flatMap(wallet -> interactor.queryHex(wallet, query.mapQuery(wallet)));
-    }
-
-    @PostMapping("/query-string")
-    Mono<ScQueryResultString> queryString(@RequestPart Mono<FilePart> pemFile,
+    Mono<ContractQueryResultHex> queryHex(@RequestPart Mono<FilePart> pemFile,
                                           @RequestPart FunctionDto query) {
         return pemFile
                 .flatMap(Wallet::fromPemFile)
-                .flatMap(wallet -> interactor.queryString(wallet, query.mapQuery(wallet)));
+                .flatMap(wallet -> interactor.queryHex(query.mapQuery(wallet)));
+    }
+
+    @PostMapping("/query-string")
+    Mono<ContractQueryResultString> queryString(@RequestPart Mono<FilePart> pemFile,
+                                                @RequestPart FunctionDto query) {
+        return pemFile
+                .flatMap(Wallet::fromPemFile)
+                .flatMap(wallet -> interactor.queryString(query.mapQuery(wallet)));
     }
 
     @PostMapping("/query-int")
-    Mono<ScQueryResultInt> queryInt(@RequestPart Mono<FilePart> pemFile,
-                                    @RequestPart FunctionDto query) {
+    Mono<ContractQueryResultInt> queryInt(@RequestPart Mono<FilePart> pemFile,
+                                          @RequestPart FunctionDto query) {
         return pemFile
                 .flatMap(Wallet::fromPemFile)
-                .flatMap(wallet -> interactor.queryInt(wallet, query.mapQuery(wallet)));
+                .flatMap(wallet -> interactor.queryInt(query.mapQuery(wallet)));
     }
 
 }

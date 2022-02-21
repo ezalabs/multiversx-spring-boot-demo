@@ -1,0 +1,11 @@
+{
+  "tokenIdentifier": string,
+  "properties": { 
+    "canFreeze": true,
+    "canWipe": true,
+    "canPause": false,
+    "canChangeOwner": true,
+    "canUpgrade": true,
+    "canAddSpecialRoles": true
+  } 
+}

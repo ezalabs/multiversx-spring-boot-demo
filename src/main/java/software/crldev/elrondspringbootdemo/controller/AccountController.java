@@ -55,12 +55,12 @@ public class AccountController {
     }
 
     @GetMapping("/{address}/balance")
-    Mono<AddressBalance> getAccountBalance(@PathVariable String address) {
+    Mono<AccountBalance> getAccountBalance(@PathVariable String address) {
         return accountInteractor.getBalance(Address.fromBech32(address));
     }
 
     @GetMapping("/{address}/nonce")
-    Mono<AddressNonce> getAccountNonce(@PathVariable String address) {
+    Mono<AccountNonce> getAccountNonce(@PathVariable String address) {
         return accountInteractor.getNonce(Address.fromBech32(address));
     }
 
@@ -90,7 +90,7 @@ public class AccountController {
     }
 
     @GetMapping("/{address}/key/{key}")
-    Mono<AddressStorageValue> getStorageValue(@PathVariable String address, @PathVariable String key) {
+    Mono<AccountStorageValue> getStorageValue(@PathVariable String address, @PathVariable String key) {
         return accountInteractor.getStorageValue(Address.fromBech32(address), key);
     }
 

@@ -1,0 +1,6 @@
+{
+  "address": string,
+  "type": string (set | unset),
+  "tokenIdentifier": string,
+  "roles": string[]
+}

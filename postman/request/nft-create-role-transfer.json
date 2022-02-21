@@ -1,0 +1,5 @@
+{
+  "tokenIdentifier": string,
+  "fromAddress": string,
+  "toAddress": string
+}

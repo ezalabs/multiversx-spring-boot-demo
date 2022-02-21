@@ -1,0 +1,9 @@
+{
+  "tokenIdentifier": string,
+  "initialQuantity": number,
+  "nftName": string,
+  "royalties": number,
+  "metadataUri": string,
+  "tags": string[],
+  "uris": string[]
+}

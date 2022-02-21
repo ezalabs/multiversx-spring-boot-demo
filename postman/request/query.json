@@ -1,5 +1,0 @@
-{
-  "scAddress": "{bech32address}",
-  "funcName": "getTotalUnStaked",
-  "args": []
-}

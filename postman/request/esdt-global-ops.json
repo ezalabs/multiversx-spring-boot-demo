@@ -1,0 +1,5 @@
+{
+  "type": string (pause | unpause | freeze | unfreeze | wipe),
+  "tokenIdentifier": string,
+  "targetAddress": string
+}

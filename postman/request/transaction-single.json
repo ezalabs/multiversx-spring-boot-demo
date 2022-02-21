@@ -1,0 +1,6 @@
+{
+  "receiverAddress": string,
+  "value": number,
+  "data": string,
+  "gasLimit": string
+}

@@ -1,0 +1,5 @@
+{
+  "type": string (mint | burn),
+  "tokenIdentifier": string,
+  "amount": number
+}

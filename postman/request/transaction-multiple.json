@@ -1,0 +1,18 @@
+[
+  {
+    "receiverAddress": string,
+    "value": number,
+    "data": string
+  },
+  {
+    "receiverAddress": string,
+    "value": number,
+    "data": string,
+    "gasLimit": string
+  },
+  {
+    "receiverAddress": string,
+    "value": number,
+    "data": string
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "type": string (fungible | non_fungible | semi_fungible | meta ),
+  "tokenName": string,
+  "tokenTicker": string,
+  "tokenInitialSupply": number,
+  "tokenDecimals": number,
+  "properties": { 
+    "canFreeze": true,
+    "canWipe": true,
+    "canPause": true,
+    "canChangeOwner": true,
+    "canUpgrade": true,
+    "canAddSpecialRoles": true,
+    "canTransferNFTCreateRole": true
+  } 
+}

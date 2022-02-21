@@ -1,0 +1,6 @@
+{
+  "tokenIdentifier": string,
+  "nonce": number,
+  "metadataUri": string,
+  "tags": string[]
+}

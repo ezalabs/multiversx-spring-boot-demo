@@ -1,0 +1,7 @@
+{
+  "scAddress": string,
+  "funcName": string,
+  "gasLimit": string,
+  "args": string[] | empty[],
+  "value": number
+}

@@ -1,6 +1,0 @@
-{
-  "receiverAddress": "{bech32address}",
-  "value": 2.0,
-  "data": "note",
-  "gasLimit": "65000"
-}

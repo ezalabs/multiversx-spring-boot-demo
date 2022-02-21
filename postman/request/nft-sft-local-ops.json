@@ -1,0 +1,6 @@
+{
+  "type": string (add | burn)
+  "tokenIdentifier": string,
+  "nonce": number,
+  "amount": number
+}

@@ -21,10 +21,10 @@ public class TransactionDto {
 
     public TransactionRequest mapToRequest() {
         return TransactionRequest.builder()
-                .receiverAddress(Address.fromBech32(this.receiverAddress))
-                .value(Balance.fromEgld(this.value))
-                .data(nonNull(this.data) ? PayloadData.fromString(this.data) : PayloadData.empty())
-                .gasLimit(nonNull(this.gasLimit) ? GasLimit.fromString(this.gasLimit) : null)
+                .receiverAddress(Address.fromBech32(receiverAddress))
+                .value(Balance.fromEgld(value))
+                .data(nonNull(data) ? PayloadData.fromString(data) : PayloadData.empty())
+                .gasLimit(nonNull(gasLimit) ? GasLimit.fromString(gasLimit) : GasLimit.zero())
                 .build();
     }
 
