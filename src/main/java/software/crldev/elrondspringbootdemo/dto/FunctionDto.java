@@ -39,7 +39,7 @@ public class FunctionDto {
                 .smartContractAddress(Address.fromBech32(scAddress))
                 .functionName(FunctionName.fromString(funcName))
                 .args(Arrays.asList(args).isEmpty() ? FunctionArgs.empty() : FunctionArgs.fromString(args))
-                .value(nonNull(value) ? Balance.fromString(gasLimit) : Balance.zero())
+                .value(nonNull(value) ? Balance.fromEgld(value) : Balance.zero())
                 .gasLimit(nonNull(gasLimit) ? GasLimit.fromString(gasLimit) : GasLimit.defaultSmartContractCall())
                 .build();
     }
