@@ -14,7 +14,7 @@ repositories {
 
 dependencies {
 
-    implementation group: 'software.crldev', name: 'elrond-spring-boot-starter-reactive', version: '1.1.0'
+    implementation group: 'software.crldev', name: 'elrond-spring-boot-starter-reactive', version: '1.1.1'
 
     implementation group: 'org.bouncycastle', name: 'bcmail-jdk15on', version: '1.69'
     implementation group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.69'
