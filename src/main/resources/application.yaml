@@ -2,7 +2,7 @@ server:
   port: 8081
 
 spring:
-  elrond:
+  multiversx:
     client:
       gateway: devnet
       readTimeoutMillis: 10000

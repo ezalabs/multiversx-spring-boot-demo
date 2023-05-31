@@ -6,10 +6,10 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 
 @SpringBootApplication
 @EnableWebFlux
-public class ElrondSpringBootDemoApplication {
+public class MultiversxSpringBootDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ElrondSpringBootDemoApplication.class, args);
+        SpringApplication.run(MultiversxSpringBootDemoApplication.class, args);
     }
 
 }

@@ -1,12 +1,12 @@
 plugins {
     id 'org.springframework.boot' version '2.6.2'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
 }
 
 group = 'software.crldev'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -14,22 +14,22 @@ repositories {
 
 dependencies {
 
-    implementation group: 'software.crldev', name: 'elrond-spring-boot-starter-reactive', version: '1.1.1'
+    implementation group: 'software.crldev', name: 'multiversx-spring-boot-starter-reactive', version: '1.2.0'
 
-    implementation group: 'org.bouncycastle', name: 'bcmail-jdk15on', version: '1.69'
-    implementation group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.69'
-    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.69'
-    implementation group: 'org.bouncycastle', name: 'bcprov-ext-jdk15on', version: '1.69'
-    implementation group: 'org.bitcoinj', name: 'bitcoinj-core', version: '0.15.10'
+    implementation group: 'org.bouncycastle', name: 'bcmail-jdk15on', version: '1.70'
+    implementation group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.70'
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.70'
+    implementation group: 'org.bouncycastle', name: 'bcprov-ext-jdk15on', version: '1.70'
+    implementation group: 'org.bitcoinj', name: 'bitcoinj-core', version: '0.16.2'
 
-    compileOnly 'org.projectlombok:lombok:1.18.22'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
-    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.2'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.2'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.1.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.0'
 
-    implementation 'org.springframework.boot:spring-boot-starter:2.6.2'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.2'
+    implementation 'org.springframework.boot:spring-boot-starter:3.1.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.0'
 }
 
 test {

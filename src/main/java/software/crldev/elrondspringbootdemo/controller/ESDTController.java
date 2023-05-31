@@ -1,28 +1,54 @@
 package software.crldev.elrondspringbootdemo.controller;
 
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import org.springframework.http.codec.multipart.FilePart;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
-import software.crldev.elrondspringbootdemo.dto.esdt.*;
-import software.crldev.elrondspringbootstarterreactive.api.model.*;
-import software.crldev.elrondspringbootstarterreactive.domain.account.Address;
-import software.crldev.elrondspringbootstarterreactive.domain.common.Nonce;
-import software.crldev.elrondspringbootstarterreactive.domain.esdt.ESDTQueryType;
-import software.crldev.elrondspringbootstarterreactive.domain.esdt.NFTStopCreation;
-import software.crldev.elrondspringbootstarterreactive.domain.esdt.common.ESDTSpecialRole;
-import software.crldev.elrondspringbootstarterreactive.domain.esdt.common.TokenIdentifier;
-import software.crldev.elrondspringbootstarterreactive.domain.wallet.Wallet;
-import software.crldev.elrondspringbootstarterreactive.interactor.esdt.ErdESDTInteractor;
-
-import java.util.*;
+import software.crldev.elrondspringbootdemo.dto.esdt.ESDTGlobalOpDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.ESDTIssuanceDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.ESDTLocalOpDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.ESDTMultiTransferDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.ESDTOwnershipTransferDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.ESDTRoleAssignmentDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.ESDTTransferDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.ESDTUpgradeDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.NFTAttributesDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.NFTCreateDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.NFTGlobalOpDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.NFTLocalOpDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.NFTRoleTransferDto;
+import software.crldev.elrondspringbootdemo.dto.esdt.NFTUrisDto;
+import software.crldev.multiversxspringbootstarterreactive.api.model.AccountESDTRoles;
+import software.crldev.multiversxspringbootstarterreactive.api.model.ContractQueryResult;
+import software.crldev.multiversxspringbootstarterreactive.api.model.ESDTToken;
+import software.crldev.multiversxspringbootstarterreactive.api.model.NFTData;
+import software.crldev.multiversxspringbootstarterreactive.api.model.TokenList;
+import software.crldev.multiversxspringbootstarterreactive.api.model.TransactionHash;
+import software.crldev.multiversxspringbootstarterreactive.domain.account.Address;
+import software.crldev.multiversxspringbootstarterreactive.domain.common.Nonce;
+import software.crldev.multiversxspringbootstarterreactive.domain.esdt.ESDTQueryType;
+import software.crldev.multiversxspringbootstarterreactive.domain.esdt.NFTStopCreation;
+import software.crldev.multiversxspringbootstarterreactive.domain.esdt.common.ESDTSpecialRole;
+import software.crldev.multiversxspringbootstarterreactive.domain.esdt.common.TokenIdentifier;
+import software.crldev.multiversxspringbootstarterreactive.domain.wallet.Wallet;
+import software.crldev.multiversxspringbootstarterreactive.interactor.esdt.MxESDTInteractor;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/esdt")
 public class ESDTController {
 
-    private final ErdESDTInteractor esdtInteractor;
+    private final MxESDTInteractor esdtInteractor;
 
     @PostMapping("/issuance")
     Mono<TransactionHash> issueEsdt(@RequestPart Mono<FilePart> pemFile,

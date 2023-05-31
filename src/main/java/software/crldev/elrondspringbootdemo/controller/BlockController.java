@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
-import software.crldev.elrondspringbootstarterreactive.api.model.Hyperblock;
-import software.crldev.elrondspringbootstarterreactive.api.model.ShardBlock;
-import software.crldev.elrondspringbootstarterreactive.interactor.block.ErdBlockInteractor;
+import software.crldev.multiversxspringbootstarterreactive.api.model.Hyperblock;
+import software.crldev.multiversxspringbootstarterreactive.api.model.ShardBlock;
+import software.crldev.multiversxspringbootstarterreactive.interactor.block.MxBlockInteractor;
 
 @RestController
 @AllArgsConstructor
 public class BlockController {
 
     @Autowired
-    private final ErdBlockInteractor blockInteractor;
+    private final MxBlockInteractor blockInteractor;
 
     @GetMapping("/hyperblock/by-nonce/{nonce}")
     public Mono<Hyperblock> getHyperblockByNonce(@PathVariable Long nonce) {

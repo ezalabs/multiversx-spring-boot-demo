@@ -1,6 +1,6 @@
 package software.crldev.elrondspringbootdemo.dto.esdt;
 
-import software.crldev.elrondspringbootstarterreactive.domain.esdt.ESDTTransaction;
+import software.crldev.multiversxspringbootstarterreactive.domain.esdt.ESDTTransaction;
 
 public interface ESDTDto {
 

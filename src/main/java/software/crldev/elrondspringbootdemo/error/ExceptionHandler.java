@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 @Slf4j
 public class ExceptionHandler {
 
-    @org.springframework.web.bind.annotation.ExceptionHandler
-    public ResponseEntity<String> handle(Exception e) {
-        log.error(e.getMessage());
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+  @org.springframework.web.bind.annotation.ExceptionHandler
+  public ResponseEntity<String> handle(Exception e) {
+    log.error(e.getMessage());
+    return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+  }
 
 }
