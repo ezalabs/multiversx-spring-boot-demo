@@ -3,16 +3,14 @@
 This is a demo Spring Boot service created to showcase how to integrate with the MultiversX Network using 
 the **``` multiversx-spring-boot-starter-reactive```** project.
 
-[![java](https://img.shields.io/badge/Java11-07405E?style=for-the-badge&logo=java&logoColor=white)](https://openjdk.java.net/projects/jdk/11)
-[![spring](https://img.shields.io/badge/SpringBoot2.0-217346?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
+[![java](https://img.shields.io/badge/Java17-07405E?style=for-the-badge&logo=java&logoColor=white)](https://openjdk.java.net/projects/jdk/11)
+[![spring](https://img.shields.io/badge/SpringBoot3.0-217346?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
 [![reactor](https://img.shields.io/badge/reactor-navy?style=for-the-badge&logo=s&logoColor=white)](https://projectreactor.io/)
 
 
 ## Author
 
 [@carlo-stanciu](https://www.github.com/carlo-stanciu)
-
-[![](https://crldev.software/img/readme-banner.png)](#)
 
 ## About
 
@@ -37,7 +35,7 @@ Contributions are always welcome!
 You can get in touch with me using the links below and figure out together how to make the project better.
 
 ## 🔗 Links
-[![portfolio](https://img.shields.io/badge/crldev.software-red?style=for-the-badge&logo=noi&logoColor=white)](https://crldev.software)
+[![portfolio](https://img.shields.io/badge/ezalabs.io-purple?style=for-the-badge&logo=noi&logoColor=white)](https://ezalabs.io)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/carlo-cristian-stanciu)
 [![twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/carlo_stanciu)
 
